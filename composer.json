@@ -1,0 +1,22 @@
+{
+    "name": "kostyaaga/practica_back",
+    "description": "qwe",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kostyaaga",
+            "email": "kostyafan2006@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "core/Src",
+            "": "app/"
+        }
+    }
+}
