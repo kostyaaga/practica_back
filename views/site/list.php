@@ -1,4 +1,10 @@
 <h1>Список зданий</h1>
+<?php
+if (app()->auth::user()->role === 'Администратор'):
+?>
+<a href="<?= app()->route->getUrl('/signup') ?>">Добавить пользователя</a>
+
+<?php endif; ?>
 <?php foreach ($buildings as $building): ?>
     <div>
         <h2>Название корпуса <?= htmlspecialchars($building->name) ?></h2>

@@ -40,6 +40,7 @@ class Site
 
     public function signup(Request $request): string
     {
+
         if ($request->method==='POST' && User::create($request->all())){
             app()->route->redirect('/login');
         }
