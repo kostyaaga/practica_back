@@ -37,11 +37,25 @@ class Request
         return $_FILES;
     }
 
+    public function body($key = null)
+    {
+        if ($key === null) {
+            return $this->body;
+        }
+        return $this->body[$key] ?? null;
+    }
+
     public function __get($key)
     {
+        if ($key === 'body') {
+            return $this->body;
+        }
         if (array_key_exists($key, $this->body)) {
             return $this->body[$key];
         }
-        throw new Error('Accessing a non-existent property');
+        throw new Error("Accessing a non-existent property: $key");
+
+
     }
+
 }

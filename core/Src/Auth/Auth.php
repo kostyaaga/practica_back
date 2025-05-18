@@ -58,5 +58,9 @@ class Auth
         return $token;
     }
 
+    public static function checkCSRF(string $token): bool
+    {
+        return Session::get('csrf_token') === $token;
+    }
 
 }

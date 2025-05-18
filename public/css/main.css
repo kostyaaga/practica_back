@@ -18,7 +18,7 @@ nav {
     align-items: center;
 }
 
-nav a {
+a {
     color: white;
     text-decoration: none;
     margin-left: 1rem;
@@ -132,18 +132,15 @@ filter-container {
     color: white;
     font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
 .clear-button {
-    padding: 20px 30px;
     background-color: #a20404;
     border: none;
     border-radius: 6px;
     color: white;
     font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
 .filter-button:hover {
@@ -252,4 +249,236 @@ a.button-link:hover {
     display: flex;
     gap: 10px;
     align-items: center;
+}
+
+.input-error {
+    border: 1px solid red;
+    background-color: #ffe6e6;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 250px;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.search-btn {
+    padding: 8px 15px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+.no-results {
+    margin-top: 15px;
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.buildings-list {
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.buildings-list li {
+    padding: 8px 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.form-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.block {
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.block h2,
+.block h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.block label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.block input[type="text"],
+.block input[type="number"],
+.block input[type="email"],
+.block input[type="password"],
+.block select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+fieldset {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.submit-area {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.error-box {
+    background-color: #ffebeb;
+    border: 1px solid #cc0000;
+    color: #cc0000;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.floor {
+    background: #e7e7e7;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.form-container .block {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-container fieldset {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+}
+
+.form-container legend {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+
+.form-container label {
+    display: block;
+    font-weight: 500;
+    margin-top: 12px;
+    color: #333;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container input[type="radio"],
+.form-container select {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input[type="radio"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+.edit{
+    margin-right: 10px;
+    font-size: 14px;
+    padding: 10px 20px;
+    background-color: #3b5bbb;
+    border-radius: 6px;
 }

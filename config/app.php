@@ -8,7 +8,10 @@ return [
     ],
     'validators' => [
         'required' => \Validators\RequireValidator::class,
-        'unique' => \Validators\UniqueValidator::class
+        'unique' => \Validators\UniqueValidator::class,
+        'name' => \Validators\CyrillicValidator::class,
+        'login' => \Validators\LatinValidator::class,
+        'password' => \Validators\PasswordComplexityValidator::class,
     ],
     'routeAppMiddleware' => [
         'csrf' => \Middlewares\CSRFMiddleware::class,

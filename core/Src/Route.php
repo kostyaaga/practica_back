@@ -49,6 +49,7 @@ class Route
     public function redirect(string $url): void
     {
         header('Location: ' . $this->getUrl($url));
+        exit;
     }
 
     public function getUrl(string $url): string
