@@ -14,12 +14,6 @@ class Building extends Model
         'total_area',
         'used_area',
         'address',
-        'total_floors',
-        'added_by',
+        'total_floors'
     ];
-
-    public static function all($columns = ['*'])
-    {
-        return parent::all($columns);
-    }
 }

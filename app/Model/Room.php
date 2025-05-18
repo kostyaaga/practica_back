@@ -14,12 +14,7 @@ class Room extends Model
         'seats',
         'floor',
         'building_id',
-        'added_by',
         'type'
     ];
 
-    public static function all($columns = ['*'])
-    {
-        return parent::all($columns);
-    }
 }

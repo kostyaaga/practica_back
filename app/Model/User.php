@@ -7,8 +7,8 @@ use Src\Auth\IdentityInterface;
 
 class User extends Model implements IdentityInterface
 {
-
     public $timestamps = false;
+
     protected $fillable = [
         'name',
         'login',
@@ -16,12 +16,13 @@ class User extends Model implements IdentityInterface
         'role',
     ];
 
-    protected static function booted()
+    public static function createUser(array $data): self
     {
-        static::created(function ($user) {
-            $user->password = md5($user->password);
-            $user->save();
-        });
+        if (!preg_match('/^[a-f0-9]{32}$/', $data['password'])) {
+            $data['password'] = md5($data['password']);
+        }
+
+        return self::create($data);
     }
 
     public function findIdentity(int $id)
@@ -36,8 +37,9 @@ class User extends Model implements IdentityInterface
 
     public function attemptIdentity(array $credentials)
     {
-        return self::where(['login' => $credentials['login'],
-            'password' => md5($credentials['password'])])->first();
+        return self::where([
+            'login' => $credentials['login'],
+            'password' => md5($credentials['password'])
+        ])->first();
     }
-
 }

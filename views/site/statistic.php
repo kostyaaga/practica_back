@@ -34,4 +34,29 @@ $building = $buildings[1];
     <p><strong>Площадь здания:</strong> <?= htmlspecialchars($building->total_area) ?> м²</p>
     <p><strong>Кол-во мест:</strong> <?= htmlspecialchars($building->total_seats) ?></p>
     <p><strong>Этажей:</strong> <?= htmlspecialchars($building->total_floors) ?></p>
+
+    <h3>Отделы в этом здании:</h3>
+    <?php
+    $hasDepartments = false;
+    foreach ($departments as $department) {
+        if ($department->building_id == $building->id) {
+            $hasDepartments = true;
+            $userName = 'Неизвестный сотрудник';
+            if (!empty($users)) {
+                foreach ($users as $user) {
+                    if ($user->id == $department->user_id) {
+                        $userName = htmlspecialchars($user->name);
+                        break;
+                    }
+                }
+            }
+            ?>
+            <p>• <?= htmlspecialchars($department->name) ?> (Ответственный: <?= $userName ?>)</p>
+            <?php
+        }
+    }
+    if (!$hasDepartments) {
+        echo '<p>Отделы не найдены</p>';
+    }
+    ?>
 </div>

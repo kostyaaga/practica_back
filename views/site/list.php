@@ -8,6 +8,7 @@
         <h2>Название корпуса: <?= htmlspecialchars($building->name) ?></h2>
         <h3>Адрес: <?= htmlspecialchars($building->address) ?></h3>
         <h3>Этажей: <?= htmlspecialchars($building->total_floors) ?></h3>
+
         <?php foreach ($rooms as $room): ?>
             <?php if ($room->building_id == $building->id): ?>
                 <p>Номер кабинета: <?= htmlspecialchars($room->number) ?></p>
@@ -20,5 +21,30 @@
                 <p>Кол-во мест: <?= htmlspecialchars($room->seats) ?></p>
             <?php endif; ?>
         <?php endforeach; ?>
+
+        <h3>Отделы в корпусе:</h3>
+        <?php
+        $hasDepartments = false;
+        $userName = "не известно";
+        foreach ($departments as $department) {
+            if ($department->building_id == $building->id) {
+                $hasDepartments = true;
+                if (!empty($users)) {
+                    foreach ($users as $user) {
+                        if ($user->id == $department->users_id) {
+                            $userName = htmlspecialchars($user->name);
+                            break;
+                        }
+                    }
+                }
+                ?>
+                <p>• <?= htmlspecialchars($department->name) ?> Ответственный: <?= $userName ?></p>
+                <?php
+            }
+        }
+        if (!$hasDepartments) {
+            echo '<p>Отделы не найдены</p>';
+        }
+        ?>
     </div>
 <?php endforeach; ?>
