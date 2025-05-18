@@ -1,5 +1,6 @@
 <h3 class="form-message"><?= $message ?? ''; ?></h3>
 <form method="post" class="register-form">
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <h2>Регистрация нового пользователя</h2>
     <label>Имя
         <input type="text" name="name" class="form-input">
