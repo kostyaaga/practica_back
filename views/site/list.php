@@ -22,7 +22,7 @@
         <h3>Этажей: <?= htmlspecialchars($building->total_floors) ?></h3>
 
 
-        <a href="<? app()->route->getUrl('/edit_building') ?>" class="edit">Редактировать</a>
+        <a href="<?= app()->route->getUrl('/edit_building') ?>?id=<?= $building->id ?>" class="edit">Редактировать</a>
         <form method="POST" action="" onsubmit="return confirm('Точно удалить корпус <?= htmlspecialchars($building->name) ?>?');" style="display:inline-block; margin-bottom:10px;">
             <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
             <input type="hidden" name="delete_id" value="<?= $building->id ?>">

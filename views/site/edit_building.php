@@ -21,7 +21,7 @@
     </label>
 
     <button type="submit">Сохранить</button>
-    <a href="<?= app()->route->getUrl('/') ?>">Отмена</a>
+    <a href="<?= app()->route->getUrl('/') ?>" style="color: black">Отмена</a>
 </form>
 
 <?php if (!empty($errors)): ?>

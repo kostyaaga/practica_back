@@ -16,4 +16,6 @@ class Building extends Model
         'address',
         'total_floors'
     ];
+
+
 }

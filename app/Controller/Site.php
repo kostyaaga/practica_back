@@ -18,13 +18,11 @@ class Site{
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
             $deleteId = (int)$_POST['delete_id'];
 
-            // Находим модель корпуса по id и удаляем из базы
             $building = Building::find($deleteId);
             if ($building) {
                 $building->delete();
             }
 
-            // Перенаправляем, чтобы избежать повторного удаления
             header('Location: ' . $_SERVER['REQUEST_URI']);
             exit;
         }
