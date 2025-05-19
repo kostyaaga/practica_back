@@ -482,3 +482,144 @@ button:hover {
     background-color: #3b5bbb;
     border-radius: 6px;
 }
+
+.page-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.building-form {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 20px 25px;
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 15px;
+    color: #34495e;
+    font-weight: 600;
+}
+
+.form-input,
+.form-input-small,
+.form-select,
+.form-select-small,
+.department-input,
+.department-select {
+    display: block;
+    margin-top: 6px;
+    padding: 8px 12px;
+    border: 1px solid #b0bec5;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-input-small,
+.form-select-small {
+    max-width: 120px;
+}
+
+.form-input:focus,
+.form-input-small:focus,
+.form-select:focus,
+.form-select-small:focus,
+.department-input:focus,
+.department-select:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+.section-title {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.section-subtitle {
+    font-size: 1.3em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.room-block {
+    /* оставляем inline стили, но можно расширить */
+}
+
+.department-fieldset {
+    border: 1px solid #d1d8e0;
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+}
+
+.department-legend {
+    font-weight: 700;
+    color: #2c3e50;
+    padding: 0 8px;
+}
+
+.radio-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #34495e;
+    cursor: pointer;
+}
+
+.department-input {
+    max-width: 350px;
+    margin-bottom: 15px;
+}
+
+.department-label {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #34495e;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.room-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.room-table th, .room-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.room-table th {
+    background-color: #f2f2f2;
+}
+
+.room-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+

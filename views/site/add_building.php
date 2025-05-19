@@ -66,7 +66,7 @@
         <button type="submit" name="action_add_room">Добавить кабинет</button>
     </section>
 
-    <<section class="form-container">
+    <section class="form-container">
         <div class="block">
             <h3>Кафедры</h3>
             <?php if (empty($departmentsData)) :
