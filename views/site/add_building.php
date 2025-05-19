@@ -66,32 +66,47 @@
         <button type="submit" name="action_add_room">Добавить кабинет</button>
     </section>
 
-    <section class="form-container">
+    <<section class="form-container">
         <div class="block">
             <h3>Кафедры</h3>
-            <?php if (empty($departmentsData)) : $departmentsData = [['name'=>'', 'existing_name'=>'', 'users_id'=>0]]; endif; ?>
+            <?php if (empty($departmentsData)) :
+                $departmentsData = [['name'=>'', 'existing_name'=>'', 'users_id'=>0, 'type'=>'new']];
+            endif; ?>
+
             <?php foreach ($departmentsData as $i => $dept): ?>
                 <fieldset>
                     <legend>Кафедра #<?= $i+1 ?></legend>
 
                     <label>
-                        <input type="radio" name="departments[<?= $i ?>][type]" value="new" <?= (!isset($dept['type']) || $dept['type'] === 'new') ? 'checked' : '' ?> />
+                        <input type="radio"
+                               name="departments[<?= $i ?>][type]"
+                               value="new"
+                            <?= (!isset($dept['type']) || $dept['type'] === 'new' ? 'checked' : '') ?>
+                               onchange="this.form.submit()">
                         Создать новую кафедру
                     </label>
+
                     <input type="text"
                            name="departments[<?= $i ?>][name]"
                            value="<?= htmlspecialchars($dept['name'] ?? '') ?>"
-                        <?= (isset($dept['type']) && $dept['type'] !== 'new') ? 'disabled' : '' ?>
-                           placeholder="Название новой кафедры" />
+                        <?= (isset($dept['type']) && $dept['type'] !== 'new' ? 'disabled' : '' )?>
+                           placeholder="Название новой кафедры">
 
                     <label>
-                        <input type="radio" name="departments[<?= $i ?>][type]" value="existing" <?= (isset($dept['type']) && $dept['type'] === 'existing') ? 'checked' : '' ?> />
+                        <input type="radio"
+                               name="departments[<?= $i ?>][type]"
+                               value="existing"
+                            <?= (isset($dept['type']) && $dept['type'] === 'existing' ? 'checked' : '') ?>
+                               onchange="this.form.submit()">
                         Выбрать существующую кафедру
                     </label>
-                    <select name="departments[<?= $i ?>][existing_name]" <?= (!isset($dept['type']) || $dept['type'] !== 'existing') ? 'disabled' : '' ?>>
+
+                    <select name="departments[<?= $i ?>][existing_name]"
+                        <?= (!isset($dept['type']) || $dept['type'] !== 'existing' ? 'disabled' : '' ) ?>>
                         <option value="">-- Выберите кафедру --</option>
                         <?php foreach ($departments as $existingDept): ?>
-                            <option value="<?= htmlspecialchars($existingDept->name) ?>" <?= (isset($dept['existing_name']) && $dept['existing_name'] === $existingDept->name) ? 'selected' : '' ?>>
+                            <option value="<?= htmlspecialchars($existingDept->name) ?>"
+                                <?= (isset($dept['existing_name']) && $dept['existing_name'] === $existingDept->name ? 'selected' : '' ) ?>>
                                 <?= htmlspecialchars($existingDept->name) ?>
                             </option>
                         <?php endforeach; ?>
@@ -101,13 +116,16 @@
                     <select name="departments[<?= $i ?>][users_id]">
                         <option value="0">— Выберите пользователя —</option>
                         <?php foreach ($users as $user): ?>
-                            <option value="<?= $user->id ?>" <?= ($dept['users_id'] ?? 0) == $user->id ? 'selected' : '' ?>>
+                            <option value="<?= $user->id ?>"
+                                <?= ($dept['users_id'] ?? 0) == $user->id ? 'selected' : '' ?>>
                                 <?= htmlspecialchars($user->name) ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
                 </fieldset>
             <?php endforeach; ?>
+
+            <input type="hidden" name="update_type" value="1">
             <button type="submit" name="action_add_department">Добавить кафедру</button>
         </div>
     </section>
