@@ -4,7 +4,7 @@ namespace Controller;
 
 use Src\Auth\Auth;
 use Src\Request;
-use Src\Validator\Validator;
+use kostyaaga\Validator\Core\Validator;
 use Src\View;
 
 class User{

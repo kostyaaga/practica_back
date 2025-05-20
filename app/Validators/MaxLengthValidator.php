@@ -1,7 +1,8 @@
 <?php
+
 namespace Validators;
 
-use Src\Validator\AbstractValidator;
+use kostyaaga\Validator\Core\AbstractValidator;
 
 class MaxLengthValidator extends AbstractValidator
 {

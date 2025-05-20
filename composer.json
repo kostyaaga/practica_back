@@ -15,7 +15,9 @@
         "illuminate/database": "6.20.44",
         "illuminate/events": "6.20.44",
         "illuminate/contracts": "6.20.44",
-        "nikic/fast-route": "^1.0"
+        "nikic/fast-route": "^1.0",
+        "kostyaaga/demo-collect": "dev-master",
+        "kostyaaga/validator": "dev-main"
     },
     "autoload": {
         "psr-4": {

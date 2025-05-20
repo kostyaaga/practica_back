@@ -21,5 +21,4 @@ return [
         'specialChars' => \Middlewares\SpecialCharsMiddleware::class,
     ],
 
-
 ];

@@ -1,8 +1,8 @@
 <?php
+
 namespace Validators;
 
-use Src\Validator\AbstractValidator;
-
+use kostyaaga\Validator\Core\AbstractValidator;
 class MinLengthValidator extends AbstractValidator
 {
     protected string $message = 'Поле :field должно быть не короче :min символов';
