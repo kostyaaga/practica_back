@@ -36,6 +36,7 @@ class User{
 
             if (\Model\User::createUser($request->all())) {
                 app()->route->redirect('/login');
+                return '';
             }
         }
         return new View('site.signup');
