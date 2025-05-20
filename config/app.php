@@ -12,6 +12,8 @@ return [
         'name' => \Validators\CyrillicValidator::class,
         'login' => \Validators\LatinValidator::class,
         'password' => \Validators\PasswordComplexityValidator::class,
+        'min_length' => \Validators\MinLengthValidator::class,
+        'max_length' => \Validators\MaxLengthValidator::class,
     ],
     'routeAppMiddleware' => [
         'csrf' => \Middlewares\CSRFMiddleware::class,

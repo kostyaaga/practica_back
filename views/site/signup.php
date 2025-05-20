@@ -26,7 +26,7 @@
     <label for="role">Роль:</label>
     <select name="role" id="role" required class="form-select <?= isset($errors['role']) ? 'input-error' : '' ?>">
         <option value="Сотрудник" <?= (isset($old['role']) && $old['role'] === 'Сотрудник') ? 'selected' : '' ?>>Сотрудник</option>
-        <option value="Админ" <?= (isset($old['role']) && $old['role'] === 'Админ') ? 'selected' : '' ?>>Админ</option>
+        <option value="Администратор" <?= (isset($old['role']) && $old['role'] === 'Администратор') ? 'selected' : '' ?>>Админ</option>
     </select>
     <?php if (isset($errors['role'])): ?>
         <div class="error"><?= implode('<br>', $errors['role']) ?></div>

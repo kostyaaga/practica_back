@@ -13,12 +13,16 @@ class User{
         if ($request->method === 'POST') {
 
             $validator = new Validator($request->all(), [
-                'name' => ['required', 'cyrillic'],
-                'login' => ['required', 'latin', 'unique:users,login'],
-                'password' => ['required', 'password']
+                'name' => ['required', 'cyrillic', 'min_length:3', 'max_length:30',],
+                'login' => ['required', 'latin', 'unique:users,login', 'min_length:4', 'max_length:30',],
+                'password' => ['required', 'password', 'min_length:6',]
             ], [
                 'required' => 'Поле :field пусто',
-                'unique' => 'Поле :field должно быть уникально'
+                'unique' => 'Поле :field должно быть уникально',
+                'min_length' => 'Поле :field содержит слишком мало символов',
+                'max_length' => 'Поле :field содержит слишком много символов',
+                'cyrillic' => 'Поле :field должно содержать только кириллические символы',
+                'latin' => 'Поле :field должно содержать только латинские символы'
             ]);
 
             if($validator->fails()){

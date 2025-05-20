@@ -161,10 +161,17 @@
         <p>Нет привязанных кафедр</p>
     <?php else: ?>
         <ul>
-            <?php foreach ($currentDepartments as $department): ?>
+            <?php
+            $userName = "не известно";
+            foreach ($currentDepartments as $department):
+                foreach ($users as $user) {
+                if ($user->id == $department->users_id) {
+                $userName = htmlspecialchars($user->name);
+                break;
+                    }
+            }?>
                 <li>
-                    <?= htmlspecialchars($department->name) ?>
-                    (Ответственный: <?= htmlspecialchars($department->user->name ?? 'Не указан') ?>)
+                    <p>• <?= htmlspecialchars($department->name) ?> Ответственный: <?= $userName ?></p>
 
                     <form method="POST" action="<?= app()->route->getUrl('/edit_building') ?>" style="display: inline;">
                         <input type="hidden" name="csrf_token" value="<?= app()->auth::generateCSRF() ?>">
