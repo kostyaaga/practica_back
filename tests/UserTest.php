@@ -25,7 +25,7 @@ class UserTest extends TestCase
         $request->method = $httpMethod;
 
         //Сохраняем результат работы метода в переменную
-        $result = (new \Controller\User())->signup($request);
+        $result = (new \Controller\UserController())->signup($request);
 
         if (!empty($result)) {
             //Проверяем варианты с ошибками валидации

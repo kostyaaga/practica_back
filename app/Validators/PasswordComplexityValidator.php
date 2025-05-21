@@ -10,9 +10,8 @@ class PasswordComplexityValidator extends AbstractValidator
 
     public function rule(): bool
     {
-        $hasUpper = preg_match('/[A-ZА-ЯЁ]/', $this->value);
-        $hasSpecial = preg_match('/[\W_]/', $this->value);
-
+        $hasUpper = preg_match('/^[A-Z]/u', $this->value);
+        $hasSpecial = preg_match('/[!@#$%^&*()_+=.-]/', $this->value);
         return $hasUpper && $hasSpecial;
     }
 }

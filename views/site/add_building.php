@@ -19,7 +19,7 @@
         <label>Используемая площадь</label>
         <input type="number" step="0.01" name="used_area" value="<?= htmlspecialchars($used_area ?? 0) ?>" />
 
-        <button type="submit" name="action_update_floors">Обновить этажи</button>
+        <button type="submit" name="action_update_floors">Обновить информацию</button>
     </section>
 
     <section class="block">
