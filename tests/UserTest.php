@@ -47,13 +47,13 @@ class UserTest extends TestCase
     protected function setUp(): void
     {
         //Установка переменной среды
-        $_SERVER['DOCUMENT_ROOT'] = 'D:/xampp';
+        $_SERVER['DOCUMENT_ROOT'] = 'D:/server';
 
        //Создаем экземпляр приложения
        $GLOBALS['app'] = new Src\Application(new Src\Settings([
-           'app' => include $_SERVER['DOCUMENT_ROOT'] . '/htdocs/config/app.php',
-           'db' => include $_SERVER['DOCUMENT_ROOT'] . '/htdocs/config/db.php',
-           'path' => include $_SERVER['DOCUMENT_ROOT'] . '/htdocs/config/path.php',
+           'app' => include $_SERVER['DOCUMENT_ROOT'] . '/rdcxiyf-m6/config/app.php',
+           'db' => include $_SERVER['DOCUMENT_ROOT'] . '/rdcxiyf-m6/config/db.php',
+           'path' => include $_SERVER['DOCUMENT_ROOT'] . '/rdcxiyf-m6/config/path.php',
        ]));
 
        //Глобальная функция для доступа к объекту приложения

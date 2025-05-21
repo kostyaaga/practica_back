@@ -35,7 +35,7 @@ class UserController{
             }
 
             if (\Model\User::createUser($request->all())) {
-                app()->route->redirect('/login');
+                app()->route->redirect('/');
                 return '';
             }
         }
